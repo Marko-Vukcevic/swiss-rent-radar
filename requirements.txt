@@ -1,0 +1,15 @@
+pandas>=2.1
+numpy>=1.26
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=4.9
+scipy>=1.11
+statsmodels>=0.14
+matplotlib>=3.8
+seaborn>=0.13
+folium>=0.15
+streamlit>=1.32
+streamlit-folium>=0.18
+python-dotenv>=1.0
+jupyter>=1.0
+ipykernel>=6.29

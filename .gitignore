@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.python-version
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environments / secrets
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# Project: large data and binaries (rubric bonus #6 — exclude large data sets)
+data/*.csv
+data/*.db
+data/*.db-journal
+data/*.json
+data/*.parquet
+data/raw/
+!data/.gitkeep
+
+# Outputs (regeneratable)
+outputs/*.html
+outputs/*.png
+outputs/*.jpg
+!outputs/.gitkeep
+
+# Streamlit cache
+.streamlit/
