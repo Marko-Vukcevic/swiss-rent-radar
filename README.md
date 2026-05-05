@@ -4,7 +4,7 @@
 
 ### Group Members
 - Marko Vukcevic
-- *(second member)*
+- Aladin Kermo
 
 ### Objective
 To investigate which structural and geographic factors most strongly explain
