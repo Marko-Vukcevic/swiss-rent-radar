@@ -25,7 +25,9 @@ load_dotenv()
 logger = logging.getLogger(__name__)
 
 API_URL = "https://api.together.xyz/v1/chat/completions"
-MODEL = "mistralai/Mistral-7B-Instruct-v0.2"
+# Together.ai retired Mistral-7B-Instruct-v0.2 from the serverless tier.
+# Llama-3.3-70B-Instruct-Turbo is currently serverless on Together.ai.
+MODEL = "meta-llama/Llama-3.3-70B-Instruct-Turbo"
 TIMEOUT_SECONDS = 30
 
 
@@ -89,10 +91,23 @@ def market_commentary(
     try:
         response = requests.post(API_URL, headers=headers, json=payload,
                                  timeout=TIMEOUT_SECONDS)
-        response.raise_for_status()
     except requests.RequestException as exc:
-        logger.error("LLM call failed: %s", exc)
+        logger.error("LLM network error: %s", exc)
         return _offline_fallback(canton_summary, room_summary)
+
+    if not response.ok:
+        # Surface the upstream error so misconfigurations (wrong model,
+        # missing credits, bad key) are visible instead of silently
+        # returning the offline summary.
+        try:
+            err = response.json().get("error", {}).get("message", response.text)
+        except ValueError:
+            err = response.text
+        logger.error("Together.ai %s: %s", response.status_code, err)
+        return (
+            f"[LLM call failed: HTTP {response.status_code} — {err}]\n\n"
+            + _offline_fallback(canton_summary, room_summary)
+        )
 
     try:
         return response.json()["choices"][0]["message"]["content"].strip()

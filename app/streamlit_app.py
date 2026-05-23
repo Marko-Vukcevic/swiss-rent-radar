@@ -201,7 +201,7 @@ with tab_map:
 with tab_llm:
     st.subheader("Market commentary")
     st.caption(
-        "Click the button to ask Mistral 7B (via Together.ai) for a short "
+        "Click the button to ask Llama 3.3 70B (via Together.ai) for a short "
         "natural-language summary of the *currently filtered* market. "
         "Without an API key the app returns an offline deterministic summary."
     )

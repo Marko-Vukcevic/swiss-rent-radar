@@ -55,7 +55,7 @@ the results in an interactive Streamlit web application.
 - 🧱 **OOP**: `Listing` and `RentalMarket` classes alongside the procedural pipeline
 - 📈 **Statistics**: Pearson correlation, Welch's *t*-test, one-way ANOVA — all reporting p-values
 - 📊 **Visualisations**: matplotlib + seaborn charts, folium interactive map, choropleth
-- 🤖 **LLM**: Together.ai (Mistral 7B) generates plain-language market commentary
+- 🤖 **LLM**: Together.ai (Llama 3.3 70B) generates plain-language market commentary
 - 🖥️ **Web app**: Streamlit dashboard with sidebar filters, live SQL, charts, map and LLM button
 - 🔄 **GitHub**: full code, notebooks, and pipeline available publicly (large data excluded via `.gitignore`)
 
