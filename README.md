@@ -6,6 +6,11 @@
 - Marko Vukcevic
 - Aladin Kermo
 
+> **Note on group composition:** Rittinghausen Elena (`rittiele`,
+> rittiele@students.zhaw.ch) was originally registered as the third
+> group member, but stopped her studies before the project began.
+> The two of us continued and completed the project together.
+
 ### Objective
 To investigate which structural and geographic factors most strongly explain
 rent differences across Switzerland — and to quantify how current asking
